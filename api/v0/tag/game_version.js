@@ -2,7 +2,7 @@ export default async function handler(req, res) {
     const { game, version_type } = req.query;
 
     try {
-        const response = await fetch('https://api.petbyte.dev/v0/raw/game_versions.json');
+        const response = await fetch('https://petbyte.dev/assets/raw_api/v0/game_versions.json');
         if (!response.ok) throw new Error('Failed to fetch game_versions.json');
         const data = await response.json();
 
