@@ -6,13 +6,8 @@ export default function handler(req, res) {
   const days = msDiff / (1000 * 60 * 60 * 24);
   const years = days / 365.25;
   
-  function trimDecimals(num, digits) {
-    const factor = Math.pow(10, digits);
-    return Math.floor(num * factor) / factor;
-  }
-
-  const trimmedYears = trimDecimals(years, 3);
+  const roundedYears = (Math.floor(years * 1000) / 1000).toFixed(3);
 
   res.setHeader('Content-Type', 'text/plain');
-  res.status(200).send(trimmedYears);
+  res.status(200).send(roundedYears);
 }
