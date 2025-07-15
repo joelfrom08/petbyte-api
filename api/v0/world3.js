@@ -14,5 +14,5 @@ export default function handler(req, res) {
   const trimmedYears = trimDecimals(years, 3);
 
   res.setHeader('Content-Type', 'text/plain');
-  res.status(200).send(roundedYears);
+  res.status(200).send(trimmedYears);
 }
